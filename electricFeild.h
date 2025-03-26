@@ -1,14 +1,14 @@
 //Class for the eletric Field
 #ifndef ELECTRICFEILD_H
 #define ELECTRICFEILD_H
-class Eletric_Feild{
+#include <cmath>
+class Electric_Feild{
 	private:
 		double *E
 	public:
-	Electric_Feild(){
-		E = new double [3];
-		E[0]=E[1]=E[2]=0.0;
-	}
+	//Default constructor
+	Electric_Feild E_components(1e5, 10.9, 1.7e2);
+	//parameterized constructor
 	Electric_Field(double x, double y, double z) {
 		E = new double[3];
 		E[0] = x;
@@ -39,4 +39,5 @@ class Eletric_Feild{
 		double calculateMagnitude(){
 			return sqrt(innerProduct());
 		}
-}
+};
+#endif
